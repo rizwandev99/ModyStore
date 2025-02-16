@@ -11,7 +11,5 @@ export async function getLatestProducts(){
     take: LATEST_PRODUCT_LIMIT,
     orderBy: { createdAt: "desc" },
   });
-  console.log("Before Conversion -->", products);
-  console.log("After Conversion -->", convertToPlainObject(products));
   return convertToPlainObject(products);
 };

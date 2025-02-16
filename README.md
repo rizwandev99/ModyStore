@@ -23,3 +23,14 @@ npx prisma studio
 
 // to run seed file:
 npx tsx ./db/seed
+
+//Neon Configurations
+npm i @neondatabase/serverless @prisma/adapter-neon ws
+
+npm i -D @types/ws bufferutil
+
+add previewFeatures = ["driverAdapters"] in prisma/schema.prisma
+generator client {
+provider = "prisma-client-js"
+previewFeatures = ["driverAdapters"]
+}
