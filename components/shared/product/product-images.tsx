@@ -1,6 +1,5 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -15,9 +14,7 @@ const ProductImages = ({ images }: { images: string[] }) => {
         width={1000}
         className="min-h-[300px] object-cover object-center"
       />
-      <div className="flex "
-      
-      >
+      <div className="flex ">
         {images.map((image, index) => (
           <Image
             key={index}
