@@ -1,3 +1,4 @@
+import ProductImages from "@/components/shared/product/product-images";
 import ProductPrice from "@/components/shared/product/product-price";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -17,12 +18,14 @@ const ProductDetailsPage = async (props: {
   }
   return (
     <section className="grid grid-cols-1 md:grid-cols-5 ml-2">
-      <div className="col-span-2">{/* Image part */}</div>
+      <div className="col-span-2">
+        <ProductImages images={product.images} />{" "}
+      </div>
       <div className="col-span-2 ">
         <div className="flex flex-col gap-4">
-          <p>
+          <div>
             {product.brand} {product.category}
-          </p>
+          </div>
           <h1 className="h1-bold">{product.name}</h1>
           <p>Rating Stars</p>
           <p>{product.numReviews} reviews</p>
@@ -38,7 +41,7 @@ const ProductDetailsPage = async (props: {
           </div>
         </div>
       </div>
-      <div>
+      <div className="mt-4 md:mt-0">
         <Card>
           <CardContent className="py-2 flex flex-col gap-3">
             <div className="flex flex-between ">
