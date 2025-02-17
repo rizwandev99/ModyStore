@@ -24,7 +24,8 @@ const ProductDetailsPage = async (props: {
       <div className="col-span-2 ">
         <div className="flex flex-col gap-4">
           <div>
-            {product.brand} {product.category}
+            <div className="text-xs">{product.brand}</div>
+            {product.category}
           </div>
           <h1 className="h1-bold">{product.name}</h1>
           <p>Rating Stars</p>
@@ -37,7 +38,7 @@ const ProductDetailsPage = async (props: {
           </div>
           <div>
             <p className="font-bold">Description</p>
-            <p>{product.description}</p>
+            <div>{product.description}</div>
           </div>
         </div>
       </div>
@@ -46,9 +47,9 @@ const ProductDetailsPage = async (props: {
           <CardContent className="py-2 flex flex-col gap-3">
             <div className="flex flex-between ">
               <p>Price</p>
-              <p>
+              <div>
                 <ProductPrice value={Number(product.price)} />
-              </p>
+              </div>
             </div>
             <div className="flex flex-between">
               <p>Status</p>
