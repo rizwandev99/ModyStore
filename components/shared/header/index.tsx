@@ -22,12 +22,12 @@ const Header = () => (
       <div className="space-x-2">
         <Button asChild variant={"ghost"}>
           <Link href="/">
-            <ShoppingCart /> Shopping
+            <ShoppingCart /> Cart
           </Link>
         </Button>
-        <Button asChild variant={"ghost"}>
+        <Button asChild>
           <Link href="/">
-            <User /> User
+            <User /> Sign In
           </Link>
         </Button>
       </div>
