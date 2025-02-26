@@ -1,36 +1,36 @@
-### Prisma
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-npm i -D prisma @prisma/client
-npx prisma init
+## Getting Started
 
-// Add Prisma formatter configuration in User Settings(JSON)
-"[prisma]": {
-"editor.defaultFormatter": "Prisma.prisma",
-"editor.formatOnSave": true
-},
+First, run the development server:
 
-//in package.json file for server run:
-"postinstall": "prisma generate"
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-// for local
-npx prisma generate
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-//run migration: like git
-npm prisma migrate dev --name init --> note: "init" here is name representing , we initiated the repo.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-//to check Database
-npx prisma studio
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-// to run seed file:
-npx tsx ./db/seed
+## Learn More
 
-//Neon Configurations
-npm i @neondatabase/serverless @prisma/adapter-neon ws
+To learn more about Next.js, take a look at the following resources:
 
-npm i -D @types/ws bufferutil
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-add previewFeatures = ["driverAdapters"] in prisma/schema.prisma
-generator client {
-provider = "prisma-client-js"
-previewFeatures = ["driverAdapters"]
-}
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
