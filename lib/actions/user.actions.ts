@@ -21,9 +21,10 @@ export async function signInWithCredentials(
     if (isRedirectError(error)) {
       throw error;
     }
+    return { success: false, message: "Invalid email or password" };
   }
 }
 
-export async function signOutUser(){
-    await signOut()
+export async function signOutUser() {
+  await signOut();
 }
