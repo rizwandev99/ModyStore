@@ -67,11 +67,10 @@ export const config = {
 
       return session;
     },
-    async jwt({ token, user, trigger, session }: any) {
+    async jwt({ token, user }: any): Promise<any> {
       if (user) {
         token.role = user.role;
       }
-
       if (user.name === "NO_NAME") {
         token.name = user.email.split("@")[0];
 
@@ -84,6 +83,7 @@ export const config = {
           },
         });
       }
+      return token;
     },
   },
 } satisfies NextAuthConfig;
