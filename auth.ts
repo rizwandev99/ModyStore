@@ -86,11 +86,11 @@ export const config = {
       }
       return token;
     },
-    authorized({ request, auth }: any) {
+    authorized({ request }: any) {
       if (!request.cookies.get("sessionCartId")) {
         const sessionCartId = crypto.randomUUID();
 
-        console.log("New sessionCartId created:", sessionCartId);
+        // console.log("New sessionCartId created:", sessionCartId);
 
         const newRequestHeaders = new Headers(request.Headers);
 
@@ -103,10 +103,12 @@ export const config = {
         response.cookies.set("sessionCartId", sessionCartId);
         return response;
       } else {
-        console.log(
-          "Existing sessionCartId:",
-          request.cookies.get("sessionCartId")
-        );
+
+        // console.log(
+        //   "Existing sessionCartId:",
+        //   request.cookies.get("sessionCartId")
+        // );
+
         return true;
       }
     },
