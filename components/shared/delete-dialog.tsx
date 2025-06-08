@@ -1,8 +1,8 @@
-"use client";
-import { useState } from "react";
-import { useTransition } from "react";
-import { useToast } from "@/hooks/use-toast";
-import { Button } from "../ui/button";
+'use client';
+import { useState } from 'react';
+import { useTransition } from 'react';
+import { useToast } from '@/hooks/use-toast';
+import { Button } from '../ui/button';
 import {
   AlertDialog,
   AlertDialogCancel,
@@ -12,7 +12,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "../ui/alert-dialog";
+} from '../ui/alert-dialog';
 
 const DeleteDialog = ({
   id,
@@ -31,7 +31,7 @@ const DeleteDialog = ({
 
       if (!res.success) {
         toast({
-          variant: "destructive",
+          variant: 'destructive',
           description: res.message,
         });
       } else {
@@ -46,7 +46,7 @@ const DeleteDialog = ({
   return (
     <AlertDialog open={open} onOpenChange={setOpen}>
       <AlertDialogTrigger asChild>
-        <Button size="sm" variant="destructive" className="ml-2">
+        <Button size='sm' variant='destructive' className='ml-2'>
           Delete
         </Button>
       </AlertDialogTrigger>
@@ -60,12 +60,12 @@ const DeleteDialog = ({
         <AlertDialogFooter>
           <AlertDialogCancel>Cancel</AlertDialogCancel>
           <Button
-            variant="destructive"
-            size="sm"
+            variant='destructive'
+            size='sm'
             disabled={isPending}
             onClick={handleDeleteClick}
           >
-            {isPending ? "Deleting..." : "Delete"}
+            {isPending ? 'Deleting...' : 'Delete'}
           </Button>
         </AlertDialogFooter>
       </AlertDialogContent>
