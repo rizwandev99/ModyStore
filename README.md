@@ -59,7 +59,7 @@ Ensure you have the following installed:
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/your_username/ModyStore.git
+    git clone https://github.com/rizwandev99/ModyStore.git
     cd ModyStore
     ```
 2.  **Install NPM packages:**
@@ -131,9 +131,9 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 ## Contact
 
-Your Name - [your_email@example.com](mailto:your_email@example.com)
+Your Name - [rizwandev99@gmail.com](mailto:rizwandev99@gmail.com)
 
-Project Link: [https://github.com/your_username/ModyStore](https://github.com/your_username/ModyStore)
+Project Link: [https://github.com/rizwandev99/ModyStore](https://github.com/rizwandev99/ModyStore)
 
 ## Acknowledgments
 
