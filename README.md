@@ -1,4 +1,4 @@
-# Prostore
+# ModyStore
 
 A full featured Ecommerce website built with Next.js, TypeScript, PostgreSQL and Prisma.
 
@@ -186,7 +186,7 @@ npx tsx ./db/seed
 
 I am not sure how long I will have this demo up but you can view it here:
 
-[ https://prostore-one.vercel.app/ ](https://prostore-one.vercel.app/)
+[ https://modystore-one.vercel.app/ ](https://modystore-one.vercel.app/)
 
 ## Bug Fixes And Course FAQ
 
@@ -208,7 +208,7 @@ logs in on the same machine, they will inherit the first users cart.
 
 To fix this we can delete the current users **Cart** from the database in our **lib/actions/user.actions.ts** `signOutUser` action.
 
-> Changes can be seen in [lib/actions/user.actions.ts](https://github.com/bradtraversy/prostore/blob/a498d4362d1485b2bd3152124cb5c3a75f8fdd70/lib/actions/user.actions.ts#L45)
+> Changes can be seen in [lib/actions/user.actions.ts](https://github.com/bradtraversy/modystore/blob/a498d4362d1485b2bd3152124cb5c3a75f8fdd70/lib/actions/user.actions.ts#L45)
 
 ### Bug: Any user can see another users order
 
@@ -232,14 +232,14 @@ if (order.userId !== session?.user.id && session?.user.role !== 'admin') {
 }
 ```
 
-> Changes can be seen in [app/(root)/order/[id]/page.tsx](<https://github.com/bradtraversy/prostore/blob/main/app/(root)/order/%5Bid%5D/page.tsx>)
+> Changes can be seen in [app/(root)/order/[id]/page.tsx](<https://github.com/bradtraversy/modystore/blob/main/app/(root)/order/%5Bid%5D/page.tsx>)
 
 ### Bug: Cart add and remove buttons share loading animation
 
 On our **/cart** page you may notice that when you increment or decrement the
 quantity of an item in the cart, then the loader shows for all buttons after we
 click. This is because all the buttons use the same **pending** state from our
-use of `useTransition` in our [app/(root)/cart/cart-table.tsx](<https://github.com/bradtraversy/prostore/blob/main/app/(root)/cart/cart-table.tsx>)
+use of `useTransition` in our [app/(root)/cart/cart-table.tsx](<https://github.com/bradtraversy/modystore/blob/main/app/(root)/cart/cart-table.tsx>)
 
 We can solve this by breaking out the Buttons into their own `AddButton` and
 `RemoveButton` components, each using their own `useTransition` and so having
@@ -248,11 +248,11 @@ their own **pending** state.
 You can if you wish move these components to their own files/modules but for
 ease of following along they can be seen in the same file.
 
-> Changes can be seen in [app/(root)/cart/cart-table.tsx](<https://github.com/bradtraversy/prostore/blob/main/app/(root)/cart/cart-table.tsx>)
+> Changes can be seen in [app/(root)/cart/cart-table.tsx](<https://github.com/bradtraversy/modystore/blob/main/app/(root)/cart/cart-table.tsx>)
 
 ### FAQ: Why are we using a JS click event in not-found
 
-In our [app/not-found.tsx](https://github.com/bradtraversy/prostore/blob/main/app/not-found.tsx) we currently have:
+In our [app/not-found.tsx](https://github.com/bradtraversy/modystore/blob/main/app/not-found.tsx) we currently have:
 
 ```tsx
 <Button
@@ -275,7 +275,7 @@ So we can change the code to:
 </Button>
 ```
 
-> Changes can be seen in [app/not-found.tsx](https://github.com/bradtraversy/prostore/blob/main/app/not-found.tsx)
+> Changes can be seen in [app/not-found.tsx](https://github.com/bradtraversy/modystore/blob/main/app/not-found.tsx)
 
 ### Fix: TypeScript no-explicit-any in auth.ts
 
@@ -331,9 +331,9 @@ constructor, rather than creating the config object first.
 
 > Changes can be seen in:
 
-- [auth.ts](https://github.com/bradtraversy/prostore/blob/main/auth.ts)
-- [auth.config.ts](https://github.com/bradtraversy/prostore/blob/main/auth.config.ts)
-- [types/next-auth.d.ts](https://github.com/bradtraversy/prostore/blob/main/types/next-auth.d.ts)
+- [auth.ts](https://github.com/bradtraversy/modystore/blob/main/auth.ts)
+- [auth.config.ts](https://github.com/bradtraversy/modystore/blob/main/auth.config.ts)
+- [types/next-auth.d.ts](https://github.com/bradtraversy/modystore/blob/main/types/next-auth.d.ts)
 
 ## TailwindCSS Update: Breaking Changes
 
@@ -344,18 +344,18 @@ By default, you'll install the latest version (**Tailwind v4**), but the course 
 
 If you want to follow the course exactly, you should install **Tailwind v3** and refer to the v3 docs:  
 :link: **[Tailwind v3 Setup for Next.js](https://v3.tailwindcss.com/docs/guides/nextjs)**  
-Make sure your **tailwind.config.ts** matches [this file](https://github.com/bradtraversy/prostore/blob/main/tailwind.config.ts)
+Make sure your **tailwind.config.ts** matches [this file](https://github.com/bradtraversy/modystore/blob/main/tailwind.config.ts)
 
 ### Option 2: Use Tailwind v4 (Updated Code Available, this seems to be the smoothest option)
 
 If you'd rather use **Tailwind v4**, there is a **`tailwind4`** branch of this repository where you can grab the updated code:  
-:link: **[Updated Repo](https://github.com/bradtraversy/prostore/tree/tailwind4)**
+:link: **[Updated Repo](https://github.com/bradtraversy/modystore/tree/tailwind4)**
 
 ### Changes Needed for Tailwind v4:
 
 - **Delete** `tailwind.config.ts` (if it exists).
-- **Update** `globals.css` to match [this file](https://github.com/bradtraversy/prostore/blob/tailwind4/assets/styles/globals.css).
-- **Update** `postcss.config.mjs` to match [this file](https://github.com/bradtraversy/prostore/blob/tailwind4/postcss.config.mjs)
+- **Update** `globals.css` to match [this file](https://github.com/bradtraversy/modystore/blob/tailwind4/assets/styles/globals.css).
+- **Update** `postcss.config.mjs` to match [this file](https://github.com/bradtraversy/modystore/blob/tailwind4/postcss.config.mjs)
 - If you're using the latest Next.js, these should be the only changes required.
 
 ### Migrating from Tailwind v3 to v4 Mid-Course?
