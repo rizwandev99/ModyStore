@@ -132,7 +132,7 @@ Sign up for an account at https://uploadthing.com/ and get the token, secret and
 **Example:**
 
 ```
-UPLOADTHING_TOKEN='tyJhcGlLZXkiOiJza19saXZlXzQ4YTE2ZjhiMDE5YmFiOgrgOWQ4MmYxMGQxZGU2NTM3YzlkZGI3YjNiZDk3MmRhNGZmNGMwMmJlOWI2Y2Q0N2UiLCJhcHBJZCI6InRyejZ2NHczNzUiLCJyZWdpb25zIjpbInNlYTEiXX0='
+UPLOADTHING_TOKEN='YOUR_UPLOADTHING_TOKEN_HERE'
 UPLOADTHIUG_SECRET='gg'
 UPLOADTHING_APPID='trz6vd475'
 ```
