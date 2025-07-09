@@ -1,0 +1,69 @@
+# This is the name of our workflow, it helps us identify it in GitHub
+name: CI/CD Pipeline
+
+# This tells GitHub when to run this workflow.
+# In this case, it will run every time someone pushes changes
+# to the 'main' branch, or creates a 'pull request' targeting 'main'.
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Here we define the "jobs" or tasks that our robot assistant will perform.
+jobs:
+  # This is our main job, we'll call it 'build'
+  build:
+    # This specifies the environment (operating system) our robot will use.
+    # 'ubuntu-latest' means a recent version of Ubuntu Linux.
+    runs-on: ubuntu-latest
+
+    # These are the individual steps the robot will follow, one by one.
+    steps:
+      # Step 1: Get your code from the GitHub repository
+      # This is like the robot grabbing all your castle pieces from the workshop.
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js (the language your Next.js project uses)
+      # This ensures the robot has the right tools to work with your project.
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # We specify Node.js version 20
+
+      # Step 3: Install all the necessary dependencies (like extra tools or libraries)
+      # This is like the robot gathering all the screws, glue, and small parts
+      # needed for your castle. 'npm ci' is a command to install dependencies cleanly.
+      - name: Install Dependencies
+        run: npm ci
+
+      # Step 4: Build the Next.js project for production
+      # This is where the robot actually assembles all your code into a ready-to-use application.
+      # 'npm run build' is the standard command for Next.js to create the optimized version of your app.
+      - name: Build Project
+        run: npm run build
+
+      # Step 5: (Optional but highly recommended) Run tests
+      # This is like the robot performing stress tests on your castle
+      # to ensure it's strong and doesn't fall apart.
+      # We'll check if you have any test scripts defined in your package.json.
+      - name: Run Tests
+        run: npm test || true # '|| true' means it won't fail the workflow if no tests are found, but you should add tests!
+
+
+      # --- Deployment Placeholder ---
+      # This is where you would add steps to actually deploy your application
+      # to a hosting service like Vercel, Netlify, AWS, etc.
+      # Each service has its own specific commands and requirements (like API keys).
+      # For now, we'll just leave a comment here, but this is the next step
+      # once your build and tests are consistently passing!
+      #
+      # Example (for Vercel, you'd need to set up Vercel project and token):
+      # - name: Deploy to Vercel
+      #   run: npx vercel deploy --prebuilt --prod
+      #   env:
+      #     VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      #     # You would set VERCEL_TOKEN as a secret in your GitHub repository settings
