@@ -29,6 +29,8 @@ import {
 } from '@/lib/actions/order.actions';
 import StripePayment from './stripe-payment';
 
+// This component displays the details of a specific order
+// It shows order items, shipping info, payment status, and totals
 const OrderDetailsTable = ({
   order,
   paypalClientId,

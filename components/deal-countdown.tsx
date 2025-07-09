@@ -5,8 +5,26 @@ import { Button } from './ui/button';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-// Static target date (replace with desired date)
-const TARGET_DATE = new Date('2025-01-20T00:00:00');
+// This function calculates the deal end time for the current day.
+// What it does: It creates a new "date and time" object for right now.
+// Then, it changes that object to be the very last second of the current day.
+// Why: So the deal always runs until midnight of the day you're viewing it.
+const getEndOfToday = () => {
+  const now = new Date(); // Get the current date and time.
+  const endOfToday = new Date(
+    now.getFullYear(), // Keep the current year.
+    now.getMonth(), // Keep the current month.
+    now.getDate(), // Keep the current day.
+    23, // Set hours to 23 (11 PM).
+    59, // Set minutes to 59.
+    59, // Set seconds to 59.
+    999 // Set milliseconds to 999 (just before the next second).
+  );
+  return endOfToday;
+};
+
+// We will use this dynamically calculated date as our target.
+const TARGET_DATE = getEndOfToday();
 
 // Function to calculate the time remaining
 const calculateTimeRemaining = (targetDate: Date) => {

@@ -1,147 +1,83 @@
-# ModyStore: Your Modern E-commerce Solution
+# 🛒 ModyStore – Modern E-Commerce Platform
 
-## Project Overview
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)]()
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]()
+[![Tech Stack](https://img.shields.io/badge/Tech-Next.js%2C%20Prisma%2C%20Stripe%2C%20PayPal-blue)]()
 
-Welcome to ModyStore, a full-featured e-commerce platform designed to offer a seamless shopping experience for customers and robust management tools for administrators. Built with modern web technologies, ModyStore emphasizes performance, scalability, and an intuitive user interface.
+A modern, full-featured E-Commerce platform built with Next.js, Prisma, Stripe, and PayPal.  
+**Showcasing best practices, clean code, and a beautiful UI.**
 
-This project showcases a comprehensive understanding of full-stack development, including user authentication, product management, shopping cart functionality, secure payment processing, and administrative dashboards.
+---
 
-## Features
+## 🚀 Features
 
-- **User Authentication:** Secure sign-up, sign-in, and profile management for customers.
-- **Product Catalog:** Browse, search, and view detailed product information.
-- **Shopping Cart:** Add, update, and remove items from the cart with real-time price updates.
-- **Order Management:** Track order history, view order details, and manage shipping addresses.
-- **Secure Payments:** Integrated with Stripe and PayPal for smooth and secure transactions.
-- **Admin Dashboard:** Comprehensive panel for managing users, products, and orders.
-- **Product Reviews:** Users can leave reviews and ratings for products.
-- **Image Uploads:** Utilize Uploadthing for efficient and secure image hosting.
-- **Responsive Design:** Optimized for various devices, from desktops to mobile phones.
-- **Email Notifications:** Send order confirmations and other important updates via Resend.
+- 🛍️ Product catalog with search & filtering
+- 🛒 Shopping cart & checkout flow
+- 💳 Stripe & PayPal payments
+- 🔒 Authentication & user profiles
+- 📝 Product reviews
+- 📦 Order management (admin & user)
+- 📊 Admin dashboard with charts
+- 🌙 Dark mode support
+- 📱 Responsive design
 
-## Technologies Used
+---
 
-ModyStore is built using a modern and popular tech stack, demonstrating proficiency in cutting-edge web development:
+## 📸 Screenshots
 
-- **Frontend:**
-  - Next.js 14 (React Framework)
-  - TypeScript
-  - Tailwind CSS (for styling)
-  - Shadcn UI (for accessible and customizable UI components)
-- **Backend:**
-  - Next.js API Routes
-  - Prisma (ORM for database interaction)
-  - PostgreSQL (Database)
-  - NextAuth.js (for authentication)
-- **Payments:**
-  - Stripe
-  - PayPal
-- **Image Uploads:**
-  - Uploadthing
-- **Email Service:**
-  - Resend
-- **Deployment:**
-  - Vercel
+![Homepage](public/images/screen.png)
 
-## Getting Started
+---
 
-To get a local copy of ModyStore up and running on your machine, follow these simple steps.
+## 🌐 Live Demo
 
-### Prerequisites
+[View Live Demo](https://mody-store-bay.vercel.app/)
 
-Ensure you have the following installed:
+---
 
-- Node.js (LTS version recommended)
-- npm or Yarn
-- Git
+## 🛠️ Getting Started
 
-### Installation
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/yourusername/prostore.git
+   cd prostore
+   ```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+3. **Set up environment variables**
+   - Copy `.env.example` to `.env` and fill in your secrets.
+4. **Run the app**
+   ```bash
+   npm run dev
+   ```
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/rizwandev99/ModyStore.git
-    cd ModyStore
-    ```
-2.  **Install NPM packages:**
-    ```bash
-    npm install
-    # or yarn install
-    ```
-3.  **Set up Environment Variables:**
-    Create a `.env` file in the root of your project and add the following (replace placeholders with your actual keys):
+---
 
-    ```
-    DATABASE_URL="YOUR_POSTGRES_DATABASE_URL"
-    NEXTAUTH_SECRET="YOUR_NEXTAUTH_SECRET_HERE"
-    PAYPAL_CLIENT_ID="YOUR_PAYPAL_CLIENT_ID_HERE"
-    PAYPAL_APP_SECRET="YOUR_PAYPAL_APP_SECRET_HERE"
-    STRIPE_SECRET_KEY="YOUR_STRIPE_SECRET_KEY_HERE"
-    NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY="YOUR_NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY_HERE"
-    UPLOADTHING_TOKEN="YOUR_UPLOADTHING_TOKEN_HERE"
-    UPLOADTHIUG_SECRET="YOUR_UPLOADTHING_SECRET_HERE"
-    UPLOADTHING_APPID="YOUR_UPLOADTHING_APP_ID_HERE"
-    RESEND_API_KEY="YOUR_RESEND_API_KEY_HERE"
-    NEXT_PUBLIC_APP_NAME="ModyStore"
-    ```
+## 🤔 Why This Project?
 
-4.  **Database Setup:**
-    Run Prisma migrations to set up your database schema:
-    ```bash
-    npx prisma migrate dev --name init
-    ```
-5.  **Seed Database (Optional):**
-    Populate your database with sample data:
-    ```bash
-    npx prisma db seed
-    ```
-6.  **Run the development server:**
+This project demonstrates:
 
-    ```bash
-    npm run dev
-    # or yarn dev
-    ```
+- Modern Next.js patterns (app directory, server components)
+- Real-world payment integration
+- Scalable code structure
+- Production-ready best practices
 
-    Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+---
 
-## Usage
+## 🤝 Contributing
 
-ModyStore can be used by both customers for online shopping and by administrators for managing the store's operations.
+Pull requests are welcome! For major changes, please open an issue first.
 
-- **Customers:** Browse products, add to cart, proceed to checkout, manage orders and profile.
-- **Admins:** Log in to `/admin` to manage products, view orders, and handle user accounts.
+---
 
-## Roadmap
+## 📬 Contact
 
-- Implement advanced search and filtering for products.
-- Add discount and coupon code functionality.
-- Integrate a robust analytics dashboard for sales insights.
-- Expand payment gateway options.
+- [Email](mailto:rizwandev99@gmail.com)
 
-## Contributing
+---
 
-Contributions are what make the open-source community an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+## 📝 License
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!
-
-1.  Fork the Project
-2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4.  Push to the Branch (`git push origin feature/AmazingFeature`)
-5.  Open a Pull Request
-
-## Contact
-
-Your Name - [rizwandev99@gmail.com](mailto:rizwandev99@gmail.com)
-
-Project Link: [https://github.com/rizwandev99/ModyStore](https://github.com/rizwandev99/ModyStore)
-
-## Acknowledgments
-
-- [Next.js Documentation](https://nextjs.org/)
-- [Tailwind CSS Documentation](https://tailwindcss.com/)
-- [Prisma Documentation](https://www.prisma.io/docs/)
-- [Shadcn UI](https://ui.shadcn.com/)
-- [Stripe Documentation](https://stripe.com/docs)
-- [PayPal Developer](https://developer.paypal.com/)
-- [Uploadthing Documentation](https://docs.uploadthing.com/)
-- [Resend Documentation](https://resend.com/docs)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

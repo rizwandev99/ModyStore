@@ -19,6 +19,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { formatCurrency } from '@/lib/utils';
 
+// This component displays the user's shopping cart in a table format
+// It shows product details, quantity, price, and allows updating/removing items
+
 // NOTE: The code here has changed from the original course code so that the
 // Buttons no longer share the same state and show the loader independently from
 // other items in the cart
