@@ -53,7 +53,6 @@ jobs:
       - name: Run Tests
         run: npm test || true # '|| true' means it won't fail the workflow if no tests are found, but you should add tests!
 
-
       # --- Deployment Placeholder ---
       # This is where you would add steps to actually deploy your application
       # to a hosting service like Vercel, Netlify, AWS, etc.
@@ -61,9 +60,8 @@ jobs:
       # For now, we'll just leave a comment here, but this is the next step
       # once your build and tests are consistently passing!
       #
-      # Example (for Vercel, you'd need to set up Vercel project and token):
-      # - name: Deploy to Vercel
-      #   run: npx vercel deploy --prebuilt --prod
-      #   env:
-      #     VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-      #     # You would set VERCEL_TOKEN as a secret in your GitHub repository settings
+      - name: Deploy to Vercel
+        run: npx vercel deploy --prebuilt --prod
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          # You would set VERCEL_TOKEN as a secret in your GitHub repository settings
