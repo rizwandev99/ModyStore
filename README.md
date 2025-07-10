@@ -23,7 +23,7 @@ A modern, full-featured E-Commerce platform built with Next.js, Prisma, Stripe, 
 
 ---
 
-## 📸 Screenshots/Gif's :
+## 📸 Screenshots/Gif's (wait to load 😅):
 
 ![Mody GIF](public/mody-gif.gif)
 
